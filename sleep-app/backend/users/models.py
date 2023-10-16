@@ -18,3 +18,9 @@ class Tag(models.Model):
     def __str__(self):
         return str(self.id)
     
+class Sleep(models.Model):
+    id = models.CharField(max_length=10)
+
+    def __str__(self):
+        return str(self.id)
+    

@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from django.contrib.auth.models import User
-from users.models import Tag
+from users.models import Tag, Sleep
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
@@ -25,3 +25,8 @@ class LoginSerializer(serializers.Serializer):
 class TagSerializer(BaseSerializer):
     class Meta(BaseSerializer.Meta):
         model = Tag
+
+class SleepSerializer(BaseSerializer):
+    class Meta(BaseSerializer.Meta):
+        model = Sleep
+

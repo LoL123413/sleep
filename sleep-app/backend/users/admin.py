@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tag
+from .models import Tag, Sleep
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
@@ -8,3 +8,5 @@ User = get_user_model()
 # Register your models with the custom admin classes
 
 admin.site.register(Tag)
+
+admin.site.register(Sleep)

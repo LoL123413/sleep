@@ -10,7 +10,7 @@ from django.contrib.auth import authenticate, login
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework.views import APIView
-from .serializers import UserSerializer, TagSerializer, LoginSerializer
+from .serializers import UserSerializer, TagSerializer, LoginSerializer, SleepSerializer
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework_api_key.models import APIKey
@@ -18,7 +18,7 @@ import random
 # Create your views here.
 # from ..users.models import ExtracurricularReference
 # from ..users.serializers import ECSSerializer
-from users.models import Tag
+from users.models import Tag, Sleep
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
@@ -51,6 +51,12 @@ class TokenRefreshAPIView(TokenRefreshView):
 class TagViewSet(BaseViewSet):
     model = Tag
     serializer_class = TagSerializer
+    queryset = model.objects.all()
+
+
+class SleepViewSet(BaseViewSet):
+    model = Sleep
+    serializer_class = SleepSerializer
     queryset = model.objects.all()
 
 @csrf_exempt  
