@@ -19,8 +19,9 @@ class Tag(models.Model):
         return str(self.id)
     
 class Sleep(models.Model):
-    id = models.CharField(max_length=10)
-
+    userId = models.CharField(max_length=10)
+    time = models.CharField(max_length=5)
+    date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return str(self.id)
     
